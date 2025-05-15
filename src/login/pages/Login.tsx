@@ -6,9 +6,11 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import { getKcClsx, type KcClsx } from "keycloakify/login/lib/kcClsx";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
+import logo from "../assets/img/logo.png"
+
 
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
-    const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
+    const { kcContext, i18n, doUseDefaultCss, classes } = props;
 
     const { kcClsx } = getKcClsx({
         doUseDefaultCss,
@@ -24,8 +26,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
     return (
         <div className="flex h-screen w-full">
             <div className="w-2/5 bg-teal-800 flex items-center justify-center">
-            <img 
-                src="" 
+            <img
+                src={logo}
                 alt="GlueLink Logo" 
                 className="w-full h-auto"
             />
@@ -203,7 +205,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 }
 
 function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: JSX.Element }) {
-    const { kcClsx, i18n, passwordInputId, children } = props;
+    const { i18n, passwordInputId, children } = props;
 
     const { msgStr } = i18n;
 
