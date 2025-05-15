@@ -5,7 +5,6 @@
 </p>
 
 This starter is based on Vite. There is also [a Webpack based starter](https://github.com/keycloakify/keycloakify-starter-webpack).
-
 # Quick start
 
 ```bash
