@@ -6,8 +6,7 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import { getKcClsx, type KcClsx } from "keycloakify/login/lib/kcClsx";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
-import logo from "../assets/logo.png"
-
+import logo from "../assets/img/logo.png";
 
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, classes } = props;
@@ -17,7 +16,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
         classes
     });
 
-    const { social, realm, url, usernameHidden, login, auth, registrationDisabled, messagesPerField } = kcContext;
+    const { social, realm, url, usernameHidden, login, auth, messagesPerField } = kcContext;
 
     const { msg, msgStr } = i18n;
 
@@ -25,8 +24,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 
     return (
         <div className="flex h-screen w-full">
-            <div className="w-2/5 bg-teal-800 flex items-center justify-center">
-            <img
+            <div className="w-2/5 bg-teal-800 flex items-center justify-center" style={{ backgroundColor: "#0B545E" }}>
+            <img 
                 src={logo}
                 alt="GlueLink Logo" 
                 className="w-full h-auto"
@@ -155,21 +154,6 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                             value={msgStr("doLogIn")}
                                         />
                                     </div>
-                                    
-                                    {realm.password && realm.registrationAllowed && !registrationDisabled && (
-                                        <div className="mt-6 text-center">
-                                            <span className="text-sm text-gray-600">
-                                                {msg("noAccount")}{" "}
-                                                <a 
-                                                    tabIndex={8} 
-                                                    href={url.registrationUrl}
-                                                    className="text-teal-600 hover:text-teal-800"
-                                                >
-                                                    {msg("doRegister")}
-                                                </a>
-                                            </span>
-                                        </div>
-                                    )}
                                 </form>
                             )}
                             
@@ -205,7 +189,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 }
 
 function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: JSX.Element }) {
-    const { i18n, passwordInputId, children } = props;
+    const {i18n, passwordInputId, children } = props;
 
     const { msgStr } = i18n;
 
