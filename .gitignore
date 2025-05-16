@@ -33,6 +33,8 @@ jspm_packages
 # Optional npm cache directory
 .npm
 
+.lock
+
 # yarn cache directory
 .pnp.*
 .yarn/*
