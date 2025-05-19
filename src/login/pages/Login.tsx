@@ -23,11 +23,11 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
     return (
         <div className="flex h-screen w-full">
             <div className="sm:w-2/5 md:w-1/2 lg:w-1/2 flex items-center justify-center" style={{ backgroundColor: "#0B545E" }}>
-            <img 
-                src={logo}
-                alt="GlueLink Logo" 
-                className="w-full h-auto"
-            />
+                <img
+                    src={logo}
+                    alt="GlueLink Logo"
+                    className="w-full h-auto"
+                />
             </div>
             
             <div className="sm:w-3/5 md:w-1/2 lg:w-1/2 bg-gray-100 flex items-center justify-center">

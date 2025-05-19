@@ -18,11 +18,15 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
 
     return (
         <div className="flex h-screen w-full">
-            <div className="w-2/5 bg-teal-800 flex items-center justify-center" style={{ backgroundColor: "#0B545E" }}>
-                <img src={logo} alt="GlueLink Logo" className="w-full h-auto" />
+            <div className="sm:w-2/5 md:w-1/2 lg:w-1/2 flex items-center justify-center" style={{ backgroundColor: "#0B545E" }}>
+                <img
+                    src={logo}
+                    alt="GlueLink Logo"
+                    className="w-full h-auto"
+                />
             </div>
 
-            <div className="w-3/5 bg-gray-100 flex items-center justify-center">
+            <div className="sm:w-3/5 md:w-1/2 lg:w-1/2 bg-gray-100 flex items-center justify-center">
                 <div className="bg-white rounded-md shadow-md p-8 max-w-md w-full mx-4">
                     <h2 className="text-2xl font-medium mb-6">{msg("updatePasswordTitle")}</h2>
 
